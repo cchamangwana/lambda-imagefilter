@@ -40,10 +40,8 @@ const isImageUrl = require("is-image-url");
   });
 
   app.get("/filteredimage", async (req: Request, res: Response) => {
-    // Used destructuring to unpack image_url from req.query
-    let { image_url } = req.query;
-
-    // console.log(image_url);
+    // statically typing image_url
+    const image_url: string = req.query.image_url as string;
 
     if (!image_url) {
       return res.status(400).send({ message: "Please Provide Image Url" });
