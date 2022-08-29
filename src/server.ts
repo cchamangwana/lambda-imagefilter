@@ -40,7 +40,8 @@ const isImageUrl = require("is-image-url");
   });
 
   app.get("/filteredimage", async (req: Request, res: Response) => {
-    let image_url = req.query.image_url;
+    // Used destructuring to unpack image_url from req.query
+    let { image_url } = req.query;
 
     // console.log(image_url);
 
